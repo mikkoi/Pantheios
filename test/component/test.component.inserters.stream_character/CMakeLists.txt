@@ -1,0 +1,21 @@
+include_directories(
+  ${STLSoft_INCLUDE_DIRS}
+  ${xTests_INCLUDE_DIRS}
+)
+
+add_executable( test.component.inserters.stream_character test.component.inserters.stream_character.cpp )
+target_link_libraries( test.component.inserters.stream_character
+  pantheios.1.fe.simple
+  pantheios.1.bec.test
+  pantheios.1.be.test
+  pantheios.1.core
+  pantheios.1.util
+  pantheios.1.fe.simple
+  pantheios.1.bec.test
+  pantheios.1.be.test
+  pantheios.1.inserters
+  xTests::xTests
+)
+add_test( test.component.inserters.stream_character test.component.inserters.stream_character )
+add_custom_target( tests DEPENDS test.component.inserters.stream_character )
+

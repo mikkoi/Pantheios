@@ -17,8 +17,3 @@ add_library( pantheios.1.util
   threadid.c
 )
 
-# export(TARGETS pantheios.1.util
-#   FILE "${CMAKE_BINARY_DIR}/cmake/PantheiosTargets.cmake"
-#   NAMESPACE Pantheios::
-# )
-#

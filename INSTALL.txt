@@ -5,6 +5,7 @@ Updated:    27th September 2015
 
 
 The following steps are required to install Pantheios:
+ (Please see below if your project uses CMake.)
 
     1. Download the latest distribution of Pantheios, from
        http://pantheios.org/
@@ -39,5 +40,28 @@ The following steps are required to install Pantheios:
 
 NOTE: Pantheios depends on the (header-only) STLSoft libraries - version
   1.9.121 or later - available from http://www.stlsoft.org/.
+
+ CMake Users
+ If your project uses CMake (https://cmake.org/) as its build tool,
+ you can install Pantheios as you would any other CMake project:
+ 1. cd Pantheios
+ 2. mkdir build-cmake && cd build-cmake
+ 3. "cmake -DCMAKE_INSTALL_PREFIX=<dir_to_install_if_wanted> .."
+    or simply "cmake .." if you want to install it to the default location
+    or you don't want to install it at all.
+ (4. "make install")
+ Installing Pantheios is not necessary for using it.
+
+ When using Pantheios in your own project, add these rows to your CMakeLists.txt:
+ find_package(Pantheios <version> REQUIRED)
+ include_directories (${Pantheios_INCLUDE_DIRS})
+
+ If you ran 'cmake' as stated above, then the location of Pantheios is
+ automatically known to CMake.
+ (Cached in User's home directory; ~/.cmake/packages/Pantheios/ in Unix).
+
+ Exported library targets have 'Pantheios::' prefix.
+ Specify them with e.g.:
+ 'target_link_libraries(<your target> Pantheios::pantheios.1.core)'
 
 =============================== End of file ================================

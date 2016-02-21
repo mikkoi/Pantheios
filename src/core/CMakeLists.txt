@@ -9,13 +9,3 @@ add_library( pantheios.1.core
   logprintf.c
 )
 
-# export(TARGETS pantheios.1.core
-#   FILE "${CMAKE_BINARY_DIR}/cmake/PantheiosTargets.cmake"
-#   NAMESPACE Pantheios::
-# )
-# install(EXPORT pantheios.1.core
-#   FILE PantheiosTargets.cmake
-#   NAMESPACE Pantheios::
-#   DESTINATION "${CMAKE_BINARY_DIR}/cmake/PantheiosTargets.cmake"
-# )
-
