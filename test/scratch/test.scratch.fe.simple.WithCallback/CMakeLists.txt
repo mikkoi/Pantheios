@@ -7,7 +7,7 @@ add_executable( test.scratch.fe.simple.WithCallback test.scratch.fe.simple.WithC
 target_link_libraries( test.scratch.fe.simple.WithCallback
   pantheios.1.core
   pantheios.1.util
-  pantheios.1.fe.simple
+  pantheios.1.fe.simple.WithCallback
   pantheios.1.be.null
   pantheios.1.bec.null
   pantheios.1.inserters
