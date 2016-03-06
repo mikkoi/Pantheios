@@ -4,6 +4,8 @@ include_directories(
 )
 
 add_executable( test.unit.getversion test.unit.getversion.c )
+set_target_properties( test.unit.getversion
+  PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_FE_PROCESS_IDENTITY=test.unit.getversion.identity )
 target_link_libraries( test.unit.getversion
   pantheios.1.core
   pantheios.1.util

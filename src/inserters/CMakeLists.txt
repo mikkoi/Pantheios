@@ -20,6 +20,7 @@ add_library( pantheios.1.inserters
 )
 # change w2m.cpp to m2w.cpp if you build with wide strings!
 target_link_libraries( pantheios.1.inserters
+  pantheios.1.util
   b64::b64
 )
 

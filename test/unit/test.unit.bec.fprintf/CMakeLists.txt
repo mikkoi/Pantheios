@@ -8,8 +8,8 @@ target_link_libraries( test.unit.bec.fprintf
   pantheios.1.core
   pantheios.1.util
   pantheios.1.fe.simple
-  pantheios.1.be.null
-  pantheios.1.bec.null
+  pantheios.1.be.fprintf
+  pantheios.1.bec.fprintf
   pantheios.1.inserters
   xTests::xTests
 )
