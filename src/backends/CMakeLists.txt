@@ -58,6 +58,9 @@ if( WIN32 )
   list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.WindowsSyslog.WithCallback" )
 endif( WIN32 )
 
+add_library(pantheios.1.be.N be.N.c )
+list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.be.N )
+
 add_library(pantheios.1.be.lrsplit be.lrsplit.c )
 list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.be.lrsplit )
 

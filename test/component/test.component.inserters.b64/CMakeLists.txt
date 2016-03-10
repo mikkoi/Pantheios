@@ -1,5 +1,6 @@
 include_directories(
   ${STLSoft_INCLUDE_DIRS}
+  ${b64_INCLUDE_DIRS}
   ${xTests_INCLUDE_DIRS}
 )
 
@@ -14,6 +15,7 @@ target_link_libraries( test.component.inserters.b64
   pantheios.1.bec.test
   pantheios.1.be.test
   pantheios.1.inserters
+  b64::b64
   xTests::xTests
 )
 add_test( test.component.inserters.b64 test.component.inserters.b64 )

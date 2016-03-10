@@ -5,6 +5,7 @@ include_directories(
 
 add_executable( test.component.inserters.stream_character test.component.inserters.stream_character.cpp )
 target_link_libraries( test.component.inserters.stream_character
+  pantheios.1.inserters
   pantheios.1.fe.simple
   pantheios.1.bec.test
   pantheios.1.be.test

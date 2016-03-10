@@ -17,6 +17,7 @@ if( NOT xTests_FOUND )
    message( AUTHOR_WARNING "The xTests framework not found. Cannot build tests." )
 endif()
 find_package( ACE QUIET )
+find_package( Pantheios.Extras QUIET )
 
 add_subdirectory( src/backends )
 add_subdirectory( src/backends/be )
