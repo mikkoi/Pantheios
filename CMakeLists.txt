@@ -3,9 +3,9 @@ project( Pantheios C CXX )
 enable_testing()
 set( Pantheios_VERSION 1.0.1.216 )
 
-option( PANTHEIOS_USE_WIDE_STRINGS "Build Pantheois with wide string support." OFF )
+option( PANTHEIOS_USE_WIDE_STRINGS "Build Pantheois with wide string support." Off )
 if( PANTHEIOS_USE_WIDE_STRINGS )
-  set_property( GLOBAL PROPERTY COMPILE_DEFINITIONS PANTHEIOS_USE_WIDE_STRINGS )
+  set_property( GLOBAL PROPERTY COMPILE_DEFINITIONS PANTHEIOS_USE_WIDE_STRINGS=1 )
 endif( PANTHEIOS_USE_WIDE_STRINGS )
 
 # Project include directory
