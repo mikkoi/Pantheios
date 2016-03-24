@@ -104,3 +104,7 @@ src/backends/ber/ber.loader.c
 *.vc8.sln
 *.vc9.sln
 
+# CMake build directories (here alternatives cmake-build and build-cmake)
+/cmake-build
+/build-cmake
+
