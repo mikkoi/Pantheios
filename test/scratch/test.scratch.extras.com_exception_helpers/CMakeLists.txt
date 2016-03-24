@@ -4,7 +4,7 @@ include_directories(
   ${xTests_INCLUDE_DIRS}
 )
 
-if( Pantheios.Extras )
+if( Pantheios.Extras_FOUND )
   add_executable( test.scratch.extras.com_exception_helpers test.scratch.extras.com_exception_helpers.cpp )
   target_link_libraries( test.scratch.extras.com_exception_helpers
     pantheios.1.core
@@ -17,5 +17,5 @@ if( Pantheios.Extras )
   )
   add_test( test.scratch.extras.com_exception_helpers test.scratch.extras.com_exception_helpers )
   add_custom_target( tests DEPENDS test.scratch.extras.com_exception_helpers )
-endif( Pantheios.Extras )
+endif( Pantheios.Extras_FOUND )
 
