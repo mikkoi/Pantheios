@@ -21,6 +21,17 @@ if( NOT xTests_FOUND )
 endif()
 find_package( ACE QUIET )
 find_package( Pantheios.Extras QUIET )
+find_library( ZeroMQ_LIBRARY
+  NAMES zmq libzmq
+  HINTS ${ZeroMQ_ROOT_DIR}/lib
+)
+find_path( ZeroMQ_INCLUDE_DIRS
+  NAMES zmq.h
+  HINTS ${ZeroMQ_ROOT_DIR}/include
+)
+if( ZeroMQ_LIBRARY AND ZeroMQ_INCLUDE_DIRS )
+  set( ZeroMQ_FOUND True )
+endif( ZeroMQ_LIBRARY AND ZeroMQ_INCLUDE_DIRS )
 
 add_subdirectory( src/backends )
 add_subdirectory( src/backends/be )

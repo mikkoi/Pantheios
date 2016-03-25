@@ -91,4 +91,14 @@ target_link_libraries( pantheios.1.inserters
 # set_target_properties( pantheios.1.inserters.m2w
 #   PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_USE_WIDE_STRINGS
 # )
+#
+# add_library( pantheios.1.inserters.w2m w2m.cpp )
+# set_source_files_properties( m2w.cpp
+#   PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_USE_WIDE_STRINGS=0
+# )
+#   
+# add_library( pantheios.1.inserters.m2w m2w.cpp )
+# set_source_files_properties( m2w.cpp
+#   PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_USE_WIDE_STRINGS=1
+# )
 

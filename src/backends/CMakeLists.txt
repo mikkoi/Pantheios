@@ -119,5 +119,18 @@ if( WIN32 )
   list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.WindowsMessageBox.WithCallback" )
 endif( WIN32 )
 
+if( ZeroMQ_FOUND )
+  include_directories ( ${ZeroMQ_INCLUDE_DIRS} )
+  add_library(pantheios.1.bec.zmq bec.zmq.cpp )
+  target_link_libraries( pantheios.1.bec.zmq ${ZeroMQ_LIBRARY} )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.zmq )
+
+  add_library( pantheios.1.bec.zmq.WithCallback bec.zmq.cpp )
+  target_link_libraries( pantheios.1.bec.zmq.WithCallback ${ZeroMQ_LIBRARY} )
+  set_target_properties( pantheios.1.bec.zmq.WithCallback
+    PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.zmq.WithCallback )
+endif( ZeroMQ_FOUND )
+
 set( Pantheios_BEC_TARGETS ${Pantheios_BEC_TARGETS_LIST} PARENT_SCOPE )
 

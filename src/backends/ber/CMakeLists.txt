@@ -62,5 +62,10 @@ if( WIN32 )
   list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.ber.WindowsMessageBox )
 endif( WIN32 )
 
+if( ZeroMQ_FOUND )
+  add_library(pantheios.1.ber.zmq ber.zmq.c )
+  list( APPEND Pantheios_BER_TARGETS_LIST pantheios.1.ber.zmq )
+endif( ZeroMQ_FOUND )
+
 set( Pantheios_BER_TARGETS ${Pantheios_BER_TARGETS_LIST} PARENT_SCOPE )
 
