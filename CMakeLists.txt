@@ -32,8 +32,10 @@ add_subdirectory( src/inserters )
 add_subdirectory( src/util )
 
 if( xTests_FOUND )
-  add_subdirectory(test EXCLUDE_FROM_ALL)
+  add_subdirectory( test EXCLUDE_FROM_ALL )
 endif( xTests_FOUND )
+
+add_subdirectory( examples EXCLUDE_FROM_ALL )
 
 set( CMAKE_INCLUDE_CURRENT_DIR ON )
 

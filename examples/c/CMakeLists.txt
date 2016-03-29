@@ -1,0 +1,7 @@
+add_subdirectory( util )
+add_subdirectory( example.c.101 )
+add_subdirectory( example.c.N )
+add_subdirectory( example.c.core.pantheios_logprintf )
+add_subdirectory( example.c.extended_severity )
+add_subdirectory( example.c.assert )
+add_subdirectory( example.c.log_n )
