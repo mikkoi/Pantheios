@@ -1,6 +1,5 @@
 include_directories (
   ${STLSoft_INCLUDE_DIRS}
-  ${b64_INCLUDE_DIRS}
 )
 
 if( WIN32 )
