@@ -15,7 +15,7 @@ list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.file )
 add_library( pantheios.1.bec.file.WithCallback bec.file.cpp )
 set_target_properties( pantheios.1.bec.file.WithCallback
   PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.file.WithCallback" )
+list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.file.WithCallback )
 
 add_library(pantheios.1.bec.null bec.null.c )
 list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.null )
@@ -26,7 +26,7 @@ list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.syslog )
 add_library( pantheios.1.bec.syslog.WithCallback bec.syslog.c )
 set_target_properties( pantheios.1.bec.syslog.WithCallback
    PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.syslog.WithCallback" )
+list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.syslog.WithCallback )
 
 if( WIN32 )
   add_library(pantheios.1.bec.WindowsConsole bec.WindowsConsole.cpp )
@@ -35,7 +35,7 @@ list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.WindowsConsole )
   add_library( pantheios.1.bec.WindowsConsole.WithCallback bec.WindowsConsole.cpp )
   set_target_properties( pantheios.1.bec.WindowsConsole.WithCallback
     PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.WindowsConsole.WithCallback" )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.WindowsConsole.WithCallback )
 endif( WIN32 )
 
 if( WIN32 )
@@ -45,7 +45,7 @@ if( WIN32 )
   add_library( pantheios.1.bec.WindowsEventLog.WithCallback bec.WindowsEventLog.cpp )
   set_target_properties( pantheios.1.bec.WindowsEventLog.WithCallback
     PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.WindowsEventLog.WithCallback" )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.WindowsEventLog.WithCallback )
 endif( WIN32 )
 
 if( WIN32 )
@@ -55,7 +55,7 @@ if( WIN32 )
   add_library( pantheios.1.bec.WindowsSyslog.WithCallback bec.WindowsSyslog.cpp )
   set_target_properties( pantheios.1.bec.WindowsSyslog.WithCallback
     PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.WindowsSyslog.WithCallback" )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.WindowsSyslog.WithCallback )
 endif( WIN32 )
 
 add_library(pantheios.1.be.N be.N.c )
@@ -72,7 +72,7 @@ if( ACE_FOUND )
   add_library( pantheios.1.bec.ACE.WithCallback bec.ACE.cpp )
   set_target_properties( pantheios.1.bec.ACE.WithCallback
     PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.ACE.WithCallback" )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.ACE.WithCallback )
 endif( ACE_FOUND )
 
 add_library(pantheios.1.bec.fail bec.fail.c )
@@ -84,7 +84,7 @@ list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.fprintf )
 add_library( pantheios.1.bec.fprintf.WithCallback bec.fprintf.cpp )
 set_target_properties( pantheios.1.bec.fprintf.WithCallback
   PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.fprintf.WithCallback" )
+list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.fprintf.WithCallback )
 
 if( WIN32 )
   add_library(pantheios.1.bec.speech bec.speech.cpp )
@@ -93,7 +93,7 @@ if( WIN32 )
   add_library( pantheios.1.bec.speech.WithCallback bec.speech.cpp )
   set_target_properties( pantheios.1.bec.speech.WithCallback
     PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.speech.WithCallback" )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.speech.WithCallback )
 endif( WIN32 )
 
 add_library(pantheios.1.bec.test bec.test.cpp )
@@ -106,7 +106,7 @@ if( WIN32 )
   add_library( pantheios.1.bec.WindowsDebugger.WithCallback bec.WindowsDebugger.cpp )
   set_target_properties( pantheios.1.bec.WindowsDebugger.WithCallback
     PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.WindowsDebugger.WithCallback" )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.WindowsDebugger.WithCallback )
 endif( WIN32 )
 
 if( WIN32 )
@@ -116,7 +116,7 @@ if( WIN32 )
   add_library( pantheios.1.bec.WindowsMessageBox.WithCallback bec.WindowsMessageBox.cpp )
   set_target_properties( pantheios.1.bec.WindowsMessageBox.WithCallback
     PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST "pantheios.1.bec.WindowsMessageBox.WithCallback" )
+  list( APPEND Pantheios_BEC_TARGETS_LIST pantheios.1.bec.WindowsMessageBox.WithCallback )
 endif( WIN32 )
 
 if( ZeroMQ_FOUND )
