@@ -1,48 +1,88 @@
-include_directories( ${STLSoft_INCLUDE_DIRS} )
-
 add_library( pantheios.1.fe.all fe.all.c )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.all )
+target_link_libraries(pantheios.1.fe.all STLSoft::STLSoft)
+target_include_directories(pantheios.1.fe.all PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
-add_library( pantheios.1.fe.all.WithCallback fe.all.c )
-set_target_properties( pantheios.1.fe.all.WithCallback
+add_library( pantheios.1.fe.all.withcallback fe.all.c )
+target_link_libraries(pantheios.1.fe.all.withcallback STLSoft::STLSoft)
+set_target_properties( pantheios.1.fe.all.withcallback
    PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.all.WithCallback )
+target_include_directories(pantheios.1.fe.all.withcallback PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
 add_library( pantheios.1.fe.fail fe.fail.c )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.fail )
+target_link_libraries(pantheios.1.fe.fail STLSoft::STLSoft)
+target_include_directories(pantheios.1.fe.fail PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
 add_library( pantheios.1.fe.N fe.N.c )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.N )
+target_link_libraries(pantheios.1.fe.N STLSoft::STLSoft)
+target_include_directories(pantheios.1.fe.N PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
-add_library( pantheios.1.fe.N.WithCallback fe.N.c )
-set_target_properties( pantheios.1.fe.N.WithCallback
+add_library( pantheios.1.fe.N.withcallback fe.N.c )
+target_link_libraries(pantheios.1.fe.N.withcallback STLSoft::STLSoft)
+set_target_properties( pantheios.1.fe.N.withcallback
    PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.N.WithCallback )
+target_include_directories(pantheios.1.fe.N.withcallback PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
 add_library( pantheios.1.fe.null fe.null.c )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.null )
+target_link_libraries(pantheios.1.fe.null STLSoft::STLSoft)
+target_include_directories(pantheios.1.fe.null PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
-add_library( pantheios.1.fe.null.WithCallback fe.null.c )
-set_target_properties( pantheios.1.fe.null.WithCallback
+add_library( pantheios.1.fe.null.withcallback fe.null.c )
+target_link_libraries(pantheios.1.fe.null.withcallback STLSoft::STLSoft)
+set_target_properties( pantheios.1.fe.null.withcallback
    PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.null.WithCallback )
+target_include_directories(pantheios.1.fe.null.withcallback PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
 add_library( pantheios.1.fe.simple fe.simple.c )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.simple )
+target_link_libraries(pantheios.1.fe.simple STLSoft::STLSoft)
+target_include_directories(pantheios.1.fe.simple PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
-add_library( pantheios.1.fe.simple.WithCallback fe.simple.c )
-set_target_properties( pantheios.1.fe.simple.WithCallback
-   PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.simple.WithCallback )
+add_library( pantheios.1.fe.simple.withcallback fe.simple.c )
+target_link_libraries(pantheios.1.fe.simple.withcallback STLSoft::STLSoft)
+set_target_properties( pantheios.1.fe.simple.withcallback
+    PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
+target_link_libraries(pantheios.1.fe.simple.withcallback STLSoft::STLSoft)
+target_include_directories(pantheios.1.fe.simple.withcallback PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>)
 
 if( WIN32 )
-  add_library( pantheios.1.fe.WindowsRegistry fe.WindowsRegistry.cpp )
-  list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.WindowsRegistry )
-  add_library( pantheios.1.fe.WindowsRegistry.WithCallback fe.WindowsRegistry.cpp )
-   set_target_properties( pantheios.1.fe.WindowsRegistry.WithCallback
-      PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
-  list( APPEND Pantheios_FE_TARGETS_LIST pantheios.1.fe.WindowsRegistry.WithCallback )
+    add_library( pantheios.1.fe.WindowsRegistry fe.WindowsRegistry.cpp )
+    target_link_libraries(pantheios.1.fe.WindowsRegistry STLSoft::STLSoft)
+    add_library( pantheios.1.fe.WindowsRegistry.withcallback fe.WindowsRegistry.cpp )
+    target_link_libraries(pantheios.1.fe.WindowsRegistry.withcallback STLSoft::STLSoft)
+    set_target_properties( pantheios.1.fe.WindowsRegistry.withcallback
+        PROPERTIES COMPILE_DEFINITIONS PANTHEIOS_BE_USE_CALLBACK )
 endif( WIN32 )
 
-set( Pantheios_FE_TARGETS ${Pantheios_FE_TARGETS_LIST} PARENT_SCOPE )
+install(TARGETS
+    pantheios.1.fe.all
+    pantheios.1.fe.all.withcallback
+    pantheios.1.fe.fail
+    pantheios.1.fe.N
+    pantheios.1.fe.N.withcallback
+    pantheios.1.fe.null
+    pantheios.1.fe.null.withcallback
+    pantheios.1.fe.simple
+    pantheios.1.fe.simple.withcallback
+    EXPORT project-targets
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
 
